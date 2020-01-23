@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+#pragma warning(disable:4996)
+
+int main()
+{
+	double a, b, c, dis;
+
+	printf("a = ");
+	scanf("%lf", &a);
+
+	printf("b = ");
+	scanf("%lf", &b);
+
+	printf("c = ");
+	scanf("%lf", &c);
+
+	if (a == 0) {
+		printf("방정식의 근은 %f입니다\n", -c / b);
+	}
+	else {
+		dis = (b * b - 4.0*a*c);
+		if (dis >= 0) {
+			printf("방정식의 근은 %f입니다.\n", (-b + sqrt(dis)) / (2.0*a));
+			printf("방정식의 근은 %f입니다.\n", (-b - sqrt(dis)) / (2.0*a));
+		}
+		else {
+			printf("실근이 존재하지 않습니다.\n");
+		}
+	}
+
+	return 0;
+}
