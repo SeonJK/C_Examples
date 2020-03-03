@@ -29,14 +29,14 @@ int main()
 
 int recursive(int list[], int low, int high, int key) {
 	int middle = (low + high) / 2;
-	
+
 	printf("[%d %d]\n", low, high);
-	
+
 	if (key == list[middle]) {
 		return middle;
 	}
 	else if (key > list[middle]) {
-		recursive(list, middle + 1, high, key);
+		return recursive(list, middle + 1, high, key);
 	}
-	else { recursive(list, low, middle - 1, key); }
+	else { return recursive(list, low, middle - 1, key); }
 }
